@@ -17,6 +17,8 @@
       from = "https://raw.githubusercontent.com/GoMani/KB/master/"
       files = ["vocab.csv"]
     </py-config>
-   
+   import pandas as pd
+   df=pd.read_csv('vocab.csv')
+   print(df.head())
   </body>
 </html>
