@@ -13,10 +13,18 @@
   <body>
   <div>The meaning of </div>
   <div id="word-id"></div>
-  <div id="choice-A"></div>
-  <div id="choice-B"></div>
-  <div id="choice-C"></div>
-  <div id="choice-D></div>
+  <div id="choice-A">
+    <button onclick="myFunction()" id="button1"></button>
+  </div>
+  <div id="choice-B">
+    <button onclick="myFunction()" id="button2"></button>
+  </div>
+  <div id="choice-C">
+    <button onclick="myFunction()" id="button3"></button>
+  </div>
+  <div id="choice-D>
+    <button onclick="myFunction()" id="button4"></button>
+  </div>
   <input type="text" id="test-input"/>
   <button id="submit-button" type="submit" pys-onClick="my_function">OK</button>
   <div id="test-output"></div>
@@ -25,12 +33,17 @@
 from js import console
 import pandas as pd
 df=pd.read_csv('vocab.csv')
+Element('button1').element.innerText='A'
+Element('button2').element.innerText='B'
+Element('button3').element.innerText='C'
+Element('button4').element.innerText='D'
 def my_function(*args, **kwargs):
-    Element('choice-A').element.innerText='A'
-    Element('choice-B').element.innerText='B'
-    Element('choice-C').element.innerText='C'
-    Element('choice-D').element.innerText='D'
-    Element('test-output').element.innerText = df.head()
+      console.log(f'args: {args}')
+    console.log(f'kwargs: {kwargs}')
+    text = Element('word-id').element.value
+    #print('text:', text)
+    console.log(f'text: {text}')
+    Element('test-output').element.innerText =
 </py-script>
     <py-config>
       packages = ["matplotlib", "pandas"]
