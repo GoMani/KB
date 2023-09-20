@@ -43,7 +43,7 @@ def my_function(*args, **kwargs):
     text = Element('word-id').element.value
     #print('text:', text)
     console.log(f'text: {text}')
-    Element('test-output').element.innerText =
+    Element('test-output').element.innerText = f'args: {args}'
 </py-script>
     <py-config>
       packages = ["matplotlib", "pandas"]
