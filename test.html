@@ -11,16 +11,35 @@
   </head>
 
   <body>
+     <div>Type an sample input here</div>
+  <input type="text" id="test-input"/>
+  <button id="submit-button" type="submit" pys-onClick="my_function">OK</button>
+  <div id="test-output"></div>
+
+<py-script>
+from js import console
+import pandas as pd
+df=pd.read_csv('vocab.csv')
+def my_function(*args, **kwargs):
+
+    #print('args:', args)
+    #print('kwargs:', kwargs)
+
+    console.log(f'args: {args}')
+    console.log(f'kwargs: {kwargs}')
+    
+    text = Element('test-input').element.value
+
+    #print('text:', text)
+    console.log(f'text: {text}')
+
+    Element('test-output').element.innerText = df.head()
+</py-script>
     <py-config>
       packages = ["matplotlib", "pandas"]
       [[fetch]]
       from = "https://raw.githubusercontent.com/GoMani/KB/master/"
       files = ["vocab.csv"]
     </py-config>
-    <py-script> 
-   import pandas as pd
-   df=pd.read_csv('vocab.csv')
-   print(df.head())
-    </py-script>
   </body>
 </html>
