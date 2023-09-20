@@ -32,6 +32,7 @@
 <py-script>
 from js import console
 import pandas as pd
+from pyscript import Element
 df=pd.read_csv('vocab.csv')
 Element('button1').element.innerText='A'
 Element('button2').element.innerText='B'
@@ -43,7 +44,7 @@ def my_function(*args, **kwargs):
     text = Element('word-id').element.value
     #print('text:', text)
     console.log(f'text: {text}')
-    Element('test-output').element.innerText = f'args: {args}'
+    Element('test-output').write(f'args: {args}')
 </py-script>
     <py-config>
       packages = ["matplotlib", "pandas"]
