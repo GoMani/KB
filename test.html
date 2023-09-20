@@ -11,7 +11,12 @@
   </head>
 
   <body>
-     <div>Type an sample input here</div>
+  <div>The meaning of </div>
+  <div id="word-id"></div>
+  <div id="choice-A"></div>
+  <div id="choice-B"></div>
+  <div id="choice-C"></div>
+  <div id="choice-D></div>
   <input type="text" id="test-input"/>
   <button id="submit-button" type="submit" pys-onClick="my_function">OK</button>
   <div id="test-output"></div>
@@ -21,18 +26,10 @@ from js import console
 import pandas as pd
 df=pd.read_csv('vocab.csv')
 def my_function(*args, **kwargs):
-
-    #print('args:', args)
-    #print('kwargs:', kwargs)
-
-    console.log(f'args: {args}')
-    console.log(f'kwargs: {kwargs}')
-    
-    text = Element('test-input').element.value
-
-    #print('text:', text)
-    console.log(f'text: {text}')
-
+    Element('choice-A').element.innerText='A'
+    Element('choice-B').element.innerText='B'
+    Element('choice-C').element.innerText='C'
+    Element('choice-D').element.innerText='D'
     Element('test-output').element.innerText = df.head()
 </py-script>
     <py-config>
